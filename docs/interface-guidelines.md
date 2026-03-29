@@ -109,6 +109,18 @@ Avoid:
 - Collapse secondary actions before compromising primary flow.
 - Treat responsive behavior as product design, not only layout adjustment.
 
+## Responsive Design
+
+- Adapt task flow, not only layout.
+- Preserve the primary action and most important information at every screen size.
+- Stack or reflow content before shrinking text below comfortable reading sizes.
+- Collapse, group, or hide secondary controls before degrading the main workflow.
+- Use max content widths where readability benefits from restraint.
+- Avoid horizontal scrolling except when the interaction genuinely requires it.
+- Let spacing and density adjust with screen size, but keep the interface calm and readable.
+- Treat map-heavy, data-heavy, and form-heavy screens as separate responsive cases rather than forcing one pattern everywhere.
+- Make responsive states feel intentionally designed, not like accidental leftovers from the desktop layout.
+
 ## Accessibility Expectations
 
 - Meet accessibility requirements by default, not as cleanup.

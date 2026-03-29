@@ -112,6 +112,23 @@ Always check:
 - no color-only meaning
 - understandable errors and status states
 
+## CLI Summary
+
+CLI tools should be:
+- standardized
+- accessible
+- keyboard-first
+- predictable
+- automation-friendly where practical
+
+Rules:
+- use clear command and flag naming
+- make `--help` useful and complete
+- keep output readable without relying on color
+- provide actionable errors and consistent exit-code behavior
+- avoid surprise prompts in automation contexts
+- prefer secure credential handling and avoid unnecessary repeated password entry
+
 ## Engineering Summary
 
 Shared standards:
@@ -153,3 +170,4 @@ For fuller detail, use:
 - `docs/accessibility-checklist.md`
 - `docs/engineering-guidelines.md`
 - `docs/release-checklist.md`
+- `docs/cli-guidelines.md`

@@ -5,7 +5,7 @@ Shared cross-app guidance for Ian Dorsey projects.
 This repo is the single source of truth for:
 - interface and design guidance
 - engineering, release, and process guidance
-- shared writing and accessibility defaults
+- shared writing, accessibility, and CLI defaults
 
 It is written to be:
 - implementation-neutral where possible
@@ -23,6 +23,7 @@ The first intended consumers are MiniTickets and GeoCompare Web, but the guidanc
 - `docs/content-style-guide.md`: shared product copy and bilingual wording guidance
 - `docs/accessibility-checklist.md`: shared accessibility review checklist
 - `docs/release-checklist.md`: shared release shorthand and execution checklist
+- `docs/cli-guidelines.md`: shared standards for CLI consistency, accessibility, and best practices
 - `docs/codex-handoff.md`: fast ChatGPT Codex handoff for loading shared repo guidance into thread context
 
 ## How To Use

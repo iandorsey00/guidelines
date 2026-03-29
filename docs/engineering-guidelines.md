@@ -72,6 +72,7 @@ Project-specific scripts may live in app repos when they are reusable inside tha
   2. commit
   3. push
   4. deploy instructions or deployment action as defined by the project
+- Deployment does not need to use the same mechanism across apps, but it should meet the same shared standard: documented, repeatable, secure, verifiable, and recoverable.
 - Record app-specific release mechanics in the app repo, not here.
 - Prefer predictable versioning and repeatable release steps.
 

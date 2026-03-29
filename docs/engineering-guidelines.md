@@ -88,6 +88,45 @@ Security should be built into normal engineering decisions from the start, inclu
 - Prefer secure credential flows that reduce unnecessary repeated password entry when an approved, safer persistent mechanism exists, such as platform keychains, credential managers, passkeys, or short-lived authenticated sessions.
 - Reduce avoidable security friction, but not by weakening core protections or expanding access beyond what is needed.
 
+## Small-App Infra Baseline
+
+Treat this as a lightweight minimum viable operations standard for small self-hosted apps, not enterprise policy.
+
+The baseline should combine:
+- offsite backups
+- tested backups, not just successful backup jobs
+- disposable or rebuildable hosts where practical
+- rehearsed rebuild and recovery steps
+- security defaults that do not make solo maintenance unnecessarily painful
+
+Defaults:
+- Classify each app as `rebuildable`, `config-backed`, or `data-backed`.
+- Define explicit `RPO` and `RTO` targets, even for solo projects.
+- Keep one documented bootstrap path for rebuilding a server from scratch.
+- Document per-app build, deploy, health-check, and rollback steps.
+- Require at least one offsite backup destination independent from the primary server.
+- Keep a separate infrastructure-backup stream for host config and recovery metadata, not only app-data backups.
+- Prefer pull-based infra backups into an off-host location you control when that reduces dependence on the server being healthy.
+- Verify infra backups with an automated dry-restore check that confirms the archive is readable, expected files are present, and extraction succeeds.
+- Add retention pruning so backup automation does not quietly create an unbounded pile of snapshots.
+- Rehearse disaster recovery instead of assuming documentation alone is sufficient.
+- Disable SSH password auth and root login by default.
+- Prefer SSH host aliases that describe the machine or role, especially when a host serves more than one app.
+- Pair security hardening with friction-reducing habits such as stable SSH aliases and copy-pasteable bootstrap commands.
+- Verify guidance automatically when possible, then add live checks near the actual infrastructure.
+- When reviewing a user environment, default to metadata-only safety checks and avoid inspecting secret-bearing contents unless explicitly necessary.
+- Schedule automation for times when the user device is realistically available, and prefer a load or login catch-up path when supported instead of assuming an ideal overnight schedule.
+
+## Public Vs Private Infra Guidance
+
+Keep public guidance focused on reusable operating principles.
+
+Keep private details out of this repo, including:
+- exact hostnames and IPs
+- secret locations and credential names
+- personal machine paths
+- recovery ordering that exposes private architecture in unnecessary detail
+
 ## Git Expectations
 
 - Keep commits intentional and understandable.

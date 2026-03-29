@@ -153,6 +153,24 @@ Rules:
 - never commit secrets or machine-specific filled env files
 - prefer secure credential handling that avoids unnecessary repeated password entry when approved tools like keychains, credential managers, passkeys, or short-lived sessions are available
 
+## Small-App Infra Summary
+
+For small self-hosted apps, use a lightweight minimum viable ops baseline:
+- classify apps as `rebuildable`, `config-backed`, or `data-backed`
+- define `RPO` and `RTO` targets
+- keep at least one offsite backup destination independent from the primary server
+- maintain a separate infra-backup stream for host config and recovery metadata
+- verify backups with dry-restore checks, not only successful backup jobs
+- add retention pruning
+- keep one bootstrap path for rebuilding a server from scratch
+- document build, deploy, health-check, and rollback steps
+- rehearse recovery instead of assuming docs are enough
+- disable SSH password auth and root login by default
+- use security defaults that reduce avoidable maintenance friction
+
+Privacy boundary:
+- keep exact hostnames, IPs, secret locations, credential names, personal machine paths, and architecture-revealing recovery detail in private guidance, not public guidance
+
 ## How Codex Should Use This Repo
 
 At the start of a project or thread:

@@ -8,6 +8,7 @@ This document turns shared shorthand into a repeatable workflow.
 
 ## Shared Terms
 
+- `DSR` = docs refresh if applicable, security pass, and release
 - `DR` = docs refresh required
 - `DR(r)` = docs refresh recommended
 - `SP` = security pass required

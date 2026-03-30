@@ -21,13 +21,14 @@ This repo should define the stable default. Project repos or local overlays may 
 
 ## Shared Shorthand
 
+- `DSR` = docs refresh if applicable, security pass, and release
 - `DR` = docs refresh required
 - `DR(r)` = docs refresh recommended
 - `SP` = security pass required
 - `SP(r)` = security pass recommended
 - `Release` implies version bump when appropriate, commit, push, and deploy instructions
 
-Use shorthand only when the meaning is already clear to the team or documented in the relevant repo.
+Use shorthand only when the meaning is already clear to the team or documented in the relevant repo. Prefer `DSR` when the intent is to run the full docs/security/release flow.
 
 ## What Belongs Here
 

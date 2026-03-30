@@ -139,6 +139,7 @@ Shared standards:
 - practical and high-signal
 
 Shorthand:
+- `DSR` = docs refresh if applicable, security pass, and release
 - `DR` = docs refresh required
 - `DR(r)` = docs refresh recommended
 - `SP` = security pass required

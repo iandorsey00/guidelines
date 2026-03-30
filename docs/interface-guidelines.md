@@ -61,6 +61,36 @@ Avoid:
 - Do not require icons everywhere. Use them when they improve scanning, recognition, or action clarity.
 - In data-heavy or map-oriented products, icons should stay sparse and functional. In action-heavy products, they can play a larger supporting role.
 
+## Standard App Icon Baseline
+
+For simple monogram-based app icons, use this default production baseline unless a product clearly needs an exception.
+
+Specifications:
+- artboard: `512 x 512 px`
+- background: black rounded rectangle
+- background fill: `#000000`
+- corner radius: `112 px`
+- foreground: white monogram or initials
+- foreground fill: `#FFFFFF`
+- typeface: `Inter ExtraBold`
+- starting type size: `280 pt`
+- tracking: `-30`
+- placement: visually centered around `(256, 256)`
+
+Rules:
+- treat the numeric center as a starting point, then optical-center by eye if needed
+- prioritize small-size legibility over typographic purity
+- use a monogram only when it remains unmistakable at small sizes
+- keep contrast maximal
+- avoid decorative effects, gradients, shadows, strokes, or textures
+- prefer flat, quiet, high-confidence geometry
+- export from the design source as a clean production asset
+
+Recommended output:
+- source design file in the design tool of choice
+- production asset as `PNG 512 x 512`
+- optional `SVG` only if export fidelity is reliable
+
 ## Color And Accent Usage
 
 - Support both light and dark mode by default, following system preference unless a product has a strong reason not to.

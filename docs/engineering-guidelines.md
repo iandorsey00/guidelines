@@ -90,6 +90,50 @@ Security should be built into normal engineering decisions from the start, inclu
 - Prefer secure credential flows that reduce unnecessary repeated password entry when an approved, safer persistent mechanism exists, such as platform keychains, credential managers, passkeys, or short-lived authenticated sessions.
 - Reduce avoidable security friction, but not by weakening core protections or expanding access beyond what is needed.
 
+## Prisma Database Management
+
+Use this guidance for small self-hosted apps that use Prisma and need calmer, safer database management without enterprise-heavy process.
+
+Core rule:
+- Do not let production database location, connection behavior, or migration behavior depend on accidental defaults. Be explicit.
+
+Recommended practices:
+- Require an explicit `DATABASE_URL` in production.
+- Avoid repo-root SQLite defaults such as `file:./dev.db` for deployed environments.
+- If SQLite is still used in production, place it in a dedicated app-data path outside the repo working tree.
+- Use one shared helper or config path for resolving database URLs instead of repeating fallback strings across app code and scripts.
+- Keep uploads and other derived storage paths clearly separated from the app code directory.
+- Make backup targeting obvious by using stable database and data-directory paths.
+- Ignore local database files and local data directories in git.
+- Keep development examples and production examples distinct.
+- Prefer production env examples that show a durable external path, not a local dev shortcut.
+
+SQLite guidance:
+- SQLite is acceptable for small single-server apps when concurrency is modest, operational simplicity matters, backups are understood, and restore steps are documented.
+- If SQLite is used in production, choose a durable file path, make backup and restore steps explicit, avoid ambiguous working-directory-relative paths, and document how related file storage is resolved.
+
+Prisma-specific guidance:
+- Prisma runtime, seeds, cron scripts, and admin or bootstrap scripts should all resolve the database URL the same way.
+- Do not let one script quietly talk to a different database because it carries its own fallback.
+- Keep schema management and runtime database targeting aligned.
+- If a release changes database shape destructively, document the exact one-time deploy step clearly.
+- Prefer calm, explicit migration notes over hidden assumptions.
+
+Example pattern:
+- local development: `DATABASE_URL="file:./data/app-name.db"`
+- production: `DATABASE_URL="file:/path/to/app-data/app-name.db"`
+
+Anti-patterns:
+- `file:./dev.db` as an implicit production fallback
+- multiple hard-coded fallback database URLs across different scripts
+- storing the production SQLite file in the repo root
+- relying on deploy-time working-directory quirks
+- mixing production data location with build artifacts or transient app files
+
+Operational standard:
+- Database location should be easy to explain, easy to back up, and easy to verify.
+- A new operator should be able to answer where the database lives, what env var points to it, what scripts touch it, how it is backed up, and how it is restored.
+
 ## Small-App Infra Baseline
 
 Treat this as a lightweight minimum viable operations standard for small self-hosted apps, not enterprise policy.

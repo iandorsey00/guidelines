@@ -172,6 +172,19 @@ For small self-hosted apps, use a lightweight minimum viable ops baseline:
 Privacy boundary:
 - keep exact hostnames, IPs, secret locations, credential names, personal machine paths, and architecture-revealing recovery detail in private guidance, not public guidance
 
+## Prisma Database Summary
+
+For small Prisma apps:
+- require an explicit `DATABASE_URL` in production
+- avoid repo-root SQLite defaults such as `file:./dev.db` in deployed environments
+- if SQLite is used in production, place it in a durable app-data path outside the repo working tree
+- make runtime, seeds, cron scripts, and bootstrap scripts resolve the database URL the same way
+- keep database paths, upload paths, and other derived storage clearly separated from app code
+- make database location easy to explain, back up, verify, and restore
+- keep development examples and production examples distinct
+
+SQLite in production is acceptable for small single-server apps when concurrency is modest and the file location, backup path, and restore story are explicit.
+
 ## How Codex Should Use This Repo
 
 At the start of a project or thread:

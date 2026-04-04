@@ -185,6 +185,18 @@ For small Prisma apps:
 
 SQLite in production is acceptable for small single-server apps when concurrency is modest and the file location, backup path, and restore story are explicit.
 
+## Shared Preference Summary
+
+For related apps with a shared account system:
+- shared systems may own preference values, but each app should own its own rendering, layout, and CSS
+- prefer shared values, compatible enums, consistent root attributes, and app-local CSS variables
+- keep the shared preference surface small: locale, theme, and accent are the default candidates
+- keep app-specific notification settings, layout choices, feature flags, and broader profile customization out of the shared layer unless there is a strong cross-app reason
+- use shared enums where practical, such as locale `ZH_CN` and `EN`, theme `SYSTEM`, `LIGHT`, and `DARK`, and a small shared accent set
+- let each app read the shared value, apply root attributes like `data-theme` and `data-accent`, and render its own CSS variables and components
+- standardize systems, not sameness
+- do not let shared preference management quietly become a broad profile platform
+
 ## How Codex Should Use This Repo
 
 At the start of a project or thread:

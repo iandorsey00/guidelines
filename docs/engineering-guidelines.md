@@ -90,6 +90,76 @@ Security should be built into normal engineering decisions from the start, inclu
 - Prefer secure credential flows that reduce unnecessary repeated password entry when an approved, safer persistent mechanism exists, such as platform keychains, credential managers, passkeys, or short-lived authenticated sessions.
 - Reduce avoidable security friction, but not by weakening core protections or expanding access beyond what is needed.
 
+## Shared Preference Management
+
+Use this guidance when multiple related apps share the same account system and should feel like part of one family without forcing identical layouts or a single global frontend implementation.
+
+This guidance is about shared preference values and compatibility, not about centralizing every UI detail.
+
+Core rule:
+- Shared systems may own preference values.
+- Each app should still own its own rendering, layout, and CSS implementation.
+- Prefer shared values, compatible enums, consistent root attributes, and app-local CSS variables and component styling.
+- Avoid forcing one app's full stylesheet onto every other app, turning a shared auth service into a broad profile platform, or centralizing app-specific presentation logic.
+
+Shared preference scope:
+- A lightweight shared account or auth service may own a small set of cross-app preference values when they improve continuity across related apps.
+- Good shared preference candidates are locale, theme preference, and accent color.
+- Keep app-specific notification settings, workspace-specific settings, per-product layout choices, product-specific feature flags, and broad profile customization systems out of scope unless there is a strong cross-app reason.
+
+Locale guidance:
+- When related apps share an account system, locale may be stored centrally.
+- Use one shared locale enum across related apps where practical.
+- Let the shared system store the preferred locale value.
+- Let each app read the shared locale first while keeping its own translation files, copy structure, and UI wording implementation.
+- Example locale values: `ZH_CN`, `EN`.
+
+Theme guidance:
+- Theme preference may be shared centrally when related apps should preserve a consistent light, dark, or system-mode choice.
+- Use a small shared enum.
+- Let each app apply the chosen value through its own root attributes and CSS.
+- Keep rendering implementation local to each app.
+- Recommended theme values: `SYSTEM`, `LIGHT`, `DARK`.
+- Recommended rendering model: apply `data-theme` on the root `html` element and let each app derive its own CSS variables from that attribute.
+
+Accent guidance:
+- Accent color may be shared centrally when related apps should preserve a single accent choice across the family.
+- Use one shared accent enum across related apps.
+- Let the shared system store the selected accent.
+- Let each app read the shared accent value first and map it into its own CSS variables and component styling.
+- The shared system should define the accent value, not mandate identical page design.
+- Recommended accent values: `BLUE`, `CYAN`, `TEAL`, `GREEN`, `LIME`, `YELLOW`, `ORANGE`, `RED`, `PINK`, `PURPLE`.
+- Example token mapping: blue `#2563eb`, cyan `#0891b2`, teal `#0f766e`, green `#16a34a`, lime `#65a30d`, yellow `#ca8a04`, orange `#ea580c`, red `#dc2626`, pink `#db2777`, purple `#7c3aed`.
+
+Cookie guidance:
+- If related apps live on the same parent domain, shared preference cookies are acceptable for low-risk cross-app continuity.
+- Use neutral cookie names rather than app-specific names when practical.
+- Set them on the parent domain when deployment makes that practical.
+- Let apps read the shared cookie first and fall back to local values if needed during migration.
+- Example neutral cookie names: `mini_locale`, `mini_theme`, `mini_accent`.
+
+Rendering boundary:
+- Preferred model: shared system stores the value, shared system may emit a neutral shared cookie, each app reads the shared value, each app applies root attributes such as `data-theme` and `data-accent`, and each app renders its own CSS variables and components.
+- This preserves continuity across apps, implementation flexibility, calmer long-term maintenance, and clear product boundaries.
+
+Design boundary:
+- Shared preference management should define values, not enforce one universal visual implementation.
+- Apps may share the same accent value but use it differently.
+- Apps may share the same theme value but keep different layouts.
+- Apps may share the same locale but keep separate translation systems.
+- Standardize systems, not sameness.
+
+Recommended default:
+- For small related self-hosted apps, centralize locale, theme, and accent values when there is a shared account system.
+- Keep CSS variables and UI rendering app-local.
+- Keep the shared preference surface intentionally small.
+- Expand only when there is a clear cross-app need.
+
+Anti-drift rule:
+- Do not let shared preference handling quietly become a broad shared profile platform.
+- If the shared system starts accumulating many unrelated settings, separate true cross-app account preferences from app-local user settings and workspace or product-specific configuration.
+- The shared layer should stay calm, minimal, and durable.
+
 ## Prisma Database Management
 
 Use this guidance for small self-hosted apps that use Prisma and need calmer, safer database management without enterprise-heavy process.

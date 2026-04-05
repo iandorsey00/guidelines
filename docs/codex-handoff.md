@@ -70,6 +70,7 @@ Icon defaults:
 - icons are optional and functional, not decorative
 - use more icons in action-heavy products
 - use fewer icons in data-heavy or map-heavy products
+- for Lucide-style glyph favicons and app icons, default to a `272 px` glyph height and `40 px` production stroke on a `512 x 512` artboard unless a product clearly needs an exception
 
 Form-control defaults:
 - both boxed inputs and bottom-line-only inputs are allowed depending on use case

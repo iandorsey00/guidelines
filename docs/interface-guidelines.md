@@ -91,6 +91,37 @@ Recommended output:
 - production asset as `PNG 512 x 512`
 - optional `SVG` only if export fidelity is reliable
 
+## Glyph App Icon Baseline
+
+For simple glyph-based app icons such as locks, maps, tickets, or similar single-symbol marks, use this default production baseline unless a product clearly needs an exception.
+
+Specifications:
+- artboard: `512 x 512 px`
+- background: black rounded rectangle
+- background fill: `#000000`
+- corner radius: `112 px`
+- foreground: white single glyph
+- foreground color: `#FFFFFF`
+- preferred source icon style: Lucide or a visually compatible equivalent
+- standard glyph height: `272 px`
+- standard production stroke width: `40 px`
+- stroke caps: round
+- stroke joins: round
+
+Rules:
+- keep the glyph optically centered rather than mathematically rigid
+- treat `272 px` glyph height as the default family baseline, then adjust slightly by eye only if a specific symbol needs optical correction
+- prefer one clear symbol over layered detail
+- round inner corners when that improves consistency with the outer container and does not reduce legibility
+- preserve strong negative space so the symbol still reads at `32 x 32` and `16 x 16`
+- avoid gradients, shadows, textures, or decorative effects
+- treat `40 px` as the default shared family baseline for Lucide-style favicon and app-icon strokes unless a product has a clear reason to deviate
+
+Recommended output:
+- source design file in the design tool of choice
+- production asset as `PNG 512 x 512`
+- verify readability at `32 x 32` and `16 x 16` before final export
+
 ## Color And Accent Usage
 
 - Support both light and dark mode by default, following system preference unless a product has a strong reason not to.

@@ -103,14 +103,15 @@ Specifications:
 - foreground: white single glyph
 - foreground color: `#FFFFFF`
 - preferred source icon style: Lucide or a visually compatible equivalent
-- standard glyph height: `272 px`
+- standard maximum glyph dimension: `272 px`
 - standard production stroke width: `40 px`
 - stroke caps: round
 - stroke joins: round
 
 Rules:
 - keep the glyph optically centered rather than mathematically rigid
-- treat `272 px` glyph height as the default family baseline, then adjust slightly by eye only if a specific symbol needs optical correction
+- treat `272 px` on the longest glyph dimension as the default family baseline, so the greater of width or height should be `272 px`
+- allow slight optical adjustment by eye only if a specific symbol needs correction for balance or small-size legibility
 - prefer one clear symbol over layered detail
 - round inner corners when that improves consistency with the outer container and does not reduce legibility
 - preserve strong negative space so the symbol still reads at `32 x 32` and `16 x 16`

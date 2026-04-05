@@ -90,6 +90,107 @@ Security should be built into normal engineering decisions from the start, inclu
 - Prefer secure credential flows that reduce unnecessary repeated password entry when an approved, safer persistent mechanism exists, such as platform keychains, credential managers, passkeys, or short-lived authenticated sessions.
 - Reduce avoidable security friction, but not by weakening core protections or expanding access beyond what is needed.
 
+## Shared Identity And Session Boundary
+
+Use this guidance when multiple related apps share one account or login system.
+
+Core rule:
+- Treat the shared auth service as the source of truth for identity, sessions, account active or inactive state, lightweight shared preferences, and app-access grants.
+- Keep app-specific authorization and product behavior inside each downstream app.
+
+The shared auth layer may own:
+- email identity
+- password hashes or login credentials
+- session issuance and revocation
+- password setup and login-challenge flows
+- account active or inactive state
+- app access grants
+- lightweight shared preference values
+
+Downstream apps should keep owning:
+- product-specific authorization
+- workflow rules
+- app-specific settings
+- app-specific rendering and UI implementation
+
+Answer the boundary this way:
+- shared auth answers who the user is, whether the account is active, whether the user can enter a given app, and which shared presentation values should follow them
+- each app answers what that user can do inside the product
+
+Do not let a shared auth service quietly turn into a general policy engine or broad profile platform unless that expansion is deliberate and documented.
+
+## Shared Workspace Boundary
+
+When two or more related apps truly share the same workspace concept, centralizing workspace identity can make sense.
+
+Core rule:
+- Centralize shared workspace identity and membership truth only when the workspace really means the same thing across apps.
+- Do not centralize all downstream authorization just because the workspace list is shared.
+
+A shared system may own:
+- workspace identity
+- workspace slug or stable key
+- workspace name and basic description
+- shared workspace membership
+- a small shared membership-role model when the role meaning is genuinely the same across apps
+
+Downstream apps should usually keep:
+- app-specific workspace fields
+- app-specific permissions
+- workflow rules tied to the workspace
+- product-specific settings and behavior
+
+Preferred model:
+- one shared workspace list
+- one shared membership source
+- app-local authorization decisions
+
+If a downstream app needs a local workspace shell for app-specific fields, that is acceptable. In that model, the shared system remains the long-term source of truth for workspace identity and membership, while the app keeps local fields that do not generalize.
+
+## Shared Account Preferences Surface
+
+When a shared auth layer owns cross-app preferences such as locale, theme, and accent, it should expose a small signed-in user surface for those values.
+
+Recommended model:
+- admins see the full auth or account-management dashboard
+- non-admin users see a lightweight account-preferences surface
+- that surface should stay intentionally small
+
+Good candidates:
+- locale
+- theme preference
+- accent color
+
+Avoid expanding this surface into:
+- app-specific notification settings
+- product-specific layout choices
+- workspace-scoped preferences
+- a broad profile-management system
+
+If a downstream app uses shared login, prefer moving shared preference controls out of that app's local settings and pointing users to the shared account surface instead.
+
+## Shared Mail Boundary
+
+When related apps share one account system, keep auth mail and product mail distinct even if they use the same sending domain.
+
+Recommended split:
+- the shared auth service sends identity and access mail
+- each app sends its own product or workflow mail
+
+Examples of shared-auth mail:
+- password setup
+- verification codes
+- invite or access-grant messages
+- login and account-access flows
+
+Examples of app-local mail:
+- ticket activity
+- workflow reminders
+- workspace events
+- product-specific operational notifications
+
+This boundary should be logical, not necessarily infrastructural. Different senders on the same verified domain are acceptable. A clean architecture does not require separate paid subdomains.
+
 ## Shared Preference Management
 
 Use this guidance when multiple related apps share the same account system and should feel like part of one family without forcing identical layouts or a single global frontend implementation.

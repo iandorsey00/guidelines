@@ -125,6 +125,11 @@ Recommended output:
 - Make destructive or irreversible actions distinct.
 - Prefer standard controls over custom-styled novelty components.
 
+For shared-account products:
+- if a shared auth or account system owns cross-app preferences, signed-in non-admin users should get a small account-preferences surface rather than a dead-end page
+- keep that surface focused on genuinely shared values such as language, theme, and accent
+- keep admin-only management clearly separate from ordinary user preference controls
+
 ## Lists And Detail Views
 
 - Lists should optimize for scanning, comparison, and next action.

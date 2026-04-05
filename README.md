@@ -14,7 +14,7 @@ It is written to be:
 - easy for humans to scan
 - easy for Codex to apply at the start of a project
 
-The first intended consumers are MiniTickets and GeoCompare Web, but the guidance should remain durable beyond either app.
+The first intended consumers are MiniTickets, MiniAuth, and GeoCompare Web, but the guidance should remain durable beyond any one app.
 
 ## Structure
 

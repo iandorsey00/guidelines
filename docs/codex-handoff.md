@@ -19,6 +19,7 @@ It exists to:
 
 Primary current consumers:
 - MiniTickets
+- MiniAuth
 - GeoCompare Web
 
 ## Core Working Rule
@@ -153,6 +154,13 @@ Rules:
 - overlays should be additive, not replacements for the shared baseline without reason
 - never commit secrets or machine-specific filled env files
 - prefer secure credential handling that avoids unnecessary repeated password entry when approved tools like keychains, credential managers, passkeys, or short-lived sessions are available
+
+Cross-app boundary defaults:
+- a shared auth system may own identity, sessions, account active or inactive state, app-access grants, and a small shared preference surface
+- downstream apps should keep app-specific authorization, workflow rules, and product-local settings
+- if workspaces are truly shared across apps, centralize workspace identity and membership truth, but keep downstream authorization local
+- if shared login is enabled, move shared preference controls such as locale, theme, and accent into the shared account surface rather than duplicating them in each app
+- keep auth mail in the shared auth layer and product mail in each product, even when both use the same verified sending domain
 
 ## Small-App Infra Summary
 

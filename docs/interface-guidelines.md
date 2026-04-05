@@ -70,20 +70,26 @@ Specifications:
 - background: black rounded rectangle
 - background fill: `#000000`
 - corner radius: `112 px`
-- foreground: white monogram or initials
+- foreground: white monogram, initials, or simple app mark
 - foreground fill: `#FFFFFF`
-- typeface: `Inter ExtraBold`
-- starting type size: `280 pt`
-- tracking: `-30`
+- typeface: `Inter ExtraBold` when using a monogram
+- starting type size: `280 pt` when using a monogram
+- tracking: `-30` when using a monogram
+- interior icon longest dimension: start at `272 px`
+- stroke width: start at `40 px`
 - placement: visually centered around `(256, 256)`
 
 Rules:
+- treat numeric specs as a production baseline, then adjust by eye for optical balance and small-size legibility
 - treat the numeric center as a starting point, then optical-center by eye if needed
-- prioritize small-size legibility over typographic purity
+- prioritize small-size legibility over typographic or geometric purity
 - use a monogram only when it remains unmistakable at small sizes
+- allow modest variation in interior size or stroke width when icon complexity requires it
+- simplify shape before shrinking padding too aggressively
 - keep contrast maximal
 - avoid decorative effects, gradients, shadows, strokes, or textures
 - prefer flat, quiet, high-confidence geometry
+- approve the final icon based on favicon-size recognizability, not only the `512 x 512` master
 - export from the design source as a clean production asset
 
 Recommended output:

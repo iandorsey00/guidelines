@@ -230,6 +230,7 @@ Accent guidance:
 - Let each app read the shared accent value first and map it into its own CSS variables and component styling.
 - The shared system should define the accent value, not mandate identical page design.
 - Recommended accent values: `BLUE`, `CYAN`, `TEAL`, `GREEN`, `LIME`, `YELLOW`, `ORANGE`, `RED`, `PINK`, `PURPLE`.
+- Shared default accent should be `BLUE` unless a product has a documented reason to deviate.
 - Example token mapping: blue `#2563eb`, cyan `#0891b2`, teal `#0f766e`, green `#16a34a`, lime `#65a30d`, yellow `#ca8a04`, orange `#ea580c`, red `#dc2626`, pink `#db2777`, purple `#7c3aed`.
 
 Cookie guidance:

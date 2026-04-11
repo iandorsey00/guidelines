@@ -94,6 +94,52 @@ Examples:
 - `No results found`
 - `Location updated`
 
+## Saved Success Messages
+
+Standardize short save-confirmation messages across apps so the experience feels calmer, more consistent, and easier to recognize.
+
+Core rule:
+- Use one shared success message for ordinary save-style actions.
+- Chinese: `你的更改已保存。`
+- English: `Your changes have been saved.`
+- Do not create page-by-page variants unless the action result truly changes what the user needs to do next.
+
+Use this message for routine save outcomes such as settings changes, record edits, workspace or object updates, and create, update, or delete flows that return to the same page.
+
+Avoid variants such as:
+- `设置已保存。`
+- `工作区已保存。`
+- `已更新。`
+- `Changes saved successfully.`
+
+Visual treatment:
+- use a calm success treatment
+- use a green success tone with a soft light background
+- keep the message short and single-line
+- do not add an extra icon by default
+
+Placement:
+- show the message once per page
+- place it immediately below the page header
+- place it above the first primary panel or content section
+
+Use the shared save message when:
+- the user stays on the same page after the action
+- the result is a normal successful save
+- no extra next-step instruction is needed
+
+Do not use the generic saved message for:
+- destructive actions such as delete or archive
+- authentication changes
+- background jobs or maintenance actions
+- upload-specific results when the file action itself is the key outcome
+- warnings or partial-success states
+
+Cross-app consistency rule:
+- related apps in the same product family should share the same saved-message copy
+- related apps in the same product family should share the same success tone
+- related apps in the same product family should share the same placement rule
+
 ## Bilingual Guidance
 
 - Translate for meaning, not word count.

@@ -82,6 +82,7 @@ Project-specific scripts may live in app repos when they are reusable inside tha
 Security should be built into normal engineering decisions from the start, including architecture, defaults, credential handling, deployment, and maintenance.
 
 - Run `SP` for meaningful changes, especially around auth, data handling, dependencies, configuration, and deployment.
+- Apps with logins should generally provide a `robots.txt` unless there is a clear reason not to.
 - Never commit secrets.
 - Never commit machine-specific filled environment files.
 - Commit only safe templates such as `.env.example` when needed.

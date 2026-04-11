@@ -101,6 +101,13 @@ Rules:
 - translate bilingual interfaces for meaning, not literal symmetry
 - write errors so recovery is obvious
 
+Saved-message rule:
+- for routine same-page save outcomes, use the shared confirmation copy
+- Chinese: `你的更改已保存。`
+- English: `Your changes have been saved.`
+- keep the treatment calm, use one page-level message, and place it below the page header above the first primary panel
+- do not create custom variants unless the result changes what the user needs to do next
+
 ## Accessibility Summary
 
 Treat accessibility as a default quality bar.

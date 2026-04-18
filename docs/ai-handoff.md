@@ -1,10 +1,10 @@
-# Codex Handoff
+# AI Handoff
 
 ## Purpose
 
-Use this document at the start of a ChatGPT Codex thread to load the most important repo guidance into context quickly.
+Use this document at the start of an AI pair-programming thread (ChatGPT Codex, Claude, or similar) to load the most important repo guidance into context quickly.
 
-This is a fast handoff layer, not the full source of truth. The full guidance remains in the other documents in this repo.
+This is a fast handoff layer, not the full source of truth. The full guidance remains in the other documents in this repo. This document is intentionally tool-neutral; if a tool-specific overlay becomes useful, add it as a companion file rather than embedding tool-specific behavior here.
 
 ## What This Repo Is
 
@@ -110,7 +110,7 @@ Saved-message rule:
 
 ## Accessibility Summary
 
-Treat accessibility as a default quality bar.
+Treat accessibility as a default quality bar. Default conformance target is `WCAG 2.1 Level AA` unless a product documents a stronger goal. See `docs/accessibility-checklist.md` for concrete contrast ratios, target sizes, and zoom expectations.
 
 Always check:
 - contrast in light and dark mode
@@ -213,7 +213,7 @@ For related apps with a shared account system:
 - standardize systems, not sameness
 - do not let shared preference management quietly become a broad profile platform
 
-## How Codex Should Use This Repo
+## How An AI Collaborator Should Use This Repo
 
 At the start of a project or thread:
 1. Read this file first.

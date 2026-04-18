@@ -6,6 +6,23 @@ Use this checklist during design, implementation, and review.
 
 Accessibility is a default quality standard, not a final cleanup step.
 
+## Targets
+
+Default to `WCAG 2.1 Level AA` as the shared conformance target across apps unless a product documents a stronger goal.
+
+Concrete values to design and review against:
+
+- text contrast: at least `4.5:1` for normal body text against its background
+- large text contrast: at least `3:1` for text that is `18pt` or larger, or `14pt` bold or larger
+- non-text contrast: at least `3:1` for UI components, focus indicators, icons with meaning, and graphical elements needed to understand content
+- focus indicator: visible in both light and dark mode, and distinct from hover
+- tap targets: at least `44 x 44 pt` on touch surfaces unless spacing around a smaller control keeps activation comfortable; treat this as the shared default
+- minimum interactive target size for non-touch pointers: at least `24 x 24 CSS px` per `WCAG 2.2 Target Size (Minimum)`
+- text resize: content must remain usable at `200%` zoom without loss of functionality or horizontal scrolling at common breakpoints
+- motion: respect `prefers-reduced-motion`; avoid parallax, auto-playing motion, or non-essential animation by default
+
+When a product has a documented reason to aim higher (for example, `AAA` contrast of `7:1` for critical text), record that target in the app repo rather than loosening the shared default here.
+
 ## Core Checks
 
 - Verify sufficient contrast in light mode and dark mode.

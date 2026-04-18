@@ -19,12 +19,12 @@ The first intended consumers are MiniTickets, MiniAuth, and GeoCompare Web, but 
 ## Structure
 
 - `docs/interface-guidelines.md`: shared interface and product design guidance
-- `docs/engineering-guidelines.md`: shared engineering, release, and collaboration guidance
+- `docs/engineering-guidelines.md`: shared engineering, release, security, and collaboration guidance
 - `docs/content-style-guide.md`: shared product copy and bilingual wording guidance
 - `docs/accessibility-checklist.md`: shared accessibility review checklist
 - `docs/release-checklist.md`: shared release shorthand and execution checklist
 - `docs/cli-guidelines.md`: shared standards for CLI consistency, accessibility, and best practices
-- `docs/codex-handoff.md`: fast ChatGPT Codex handoff for loading shared repo guidance into thread context
+- `docs/ai-handoff.md`: fast, tool-neutral handoff for loading shared repo guidance into an AI pair-programming thread
 
 ## How To Use
 
@@ -54,4 +54,4 @@ Does not belong here:
 
 For this repo, the docs are the primary handoff.
 
-`docs/codex-handoff.md` exists as a fast-loading Codex-specific summary so a new ChatGPT Codex thread can pick up the shared standards quickly. The full source of truth remains the main documents in this repo.
+`docs/ai-handoff.md` exists as a fast-loading, tool-neutral summary so a new AI pair-programming thread (ChatGPT Codex, Claude, or similar) can pick up the shared standards quickly. The full source of truth remains the main documents in this repo. If a tool-specific overlay is ever needed, add it as a companion file rather than embedding tool-specific behavior in the shared handoff.

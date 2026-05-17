@@ -133,6 +133,7 @@ Recommended output:
 
 - Support both light and dark mode by default, following system preference unless a product has a strong reason not to.
 - Use neutral surfaces and typography as the foundation.
+- Default accent color should be blue unless a product has a documented reason to deviate.
 - Reserve accent color for actions, focus states, selection, status emphasis, and moments that benefit from guidance.
 - Do not let accent color dominate the interface.
 - Where appropriate, inherit the MiniTickets accent approach: present, recognizable, restrained.

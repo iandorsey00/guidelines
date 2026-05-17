@@ -54,6 +54,7 @@ Secondary influences:
 Visual defaults:
 - support light and dark mode following system preference
 - use neutral surfaces with restrained accent usage
+- default accent color is blue unless a product has a documented reason to deviate
 - favor progressive disclosure over exposing everything at once
 - reduce clutter before reducing space
 - remove dividers and borders that do not carry meaning

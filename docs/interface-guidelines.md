@@ -132,11 +132,13 @@ Recommended output:
 ## Color And Accent Usage
 
 - Support both light and dark mode by default, following system preference unless a product has a strong reason not to.
+- Build the base interface from a restrained range of grays rather than from large fields of accent color.
 - Use neutral surfaces and typography as the foundation.
 - Default accent color should be blue unless a product has a documented reason to deviate.
 - Reserve accent color for actions, focus states, selection, status emphasis, and moments that benefit from guidance.
 - Do not let accent color dominate the interface.
 - Where appropriate, inherit the MiniTickets accent approach: present, recognizable, restrained.
+- When accent color swatches appear, render them as circles by default.
 
 ## Spacing And Density
 
@@ -155,6 +157,19 @@ Recommended output:
 - Keep navigation simple and stable.
 - Prefer obvious page structure over clever layout moves.
 - Standardize alignment logic and spacing rhythm before standardizing exact header position or page chrome.
+
+## Standard Page Header
+
+Use a standard GeoCompare-Web-style header by default unless a product has a clear reason to deviate.
+
+Characteristics:
+- page title aligned at the top of the content area
+- concise supporting text only when it adds orientation
+- calm spacing below the header before the first primary panel
+- shared save or status messages placed directly beneath the header when used
+- no decorative chrome unless it improves comprehension
+
+The header should feel steady, quiet, and structural rather than branded or ornamental.
 
 ## Forms And Controls
 

@@ -53,8 +53,10 @@ Secondary influences:
 
 Visual defaults:
 - support light and dark mode following system preference
+- build the base interface from restrained shades of gray
 - use neutral surfaces with restrained accent usage
 - default accent color is blue unless a product has a documented reason to deviate
+- accent swatches should be circles when they appear
 - favor progressive disclosure over exposing everything at once
 - reduce clutter before reducing space
 - remove dividers and borders that do not carry meaning
@@ -77,6 +79,10 @@ Form-control defaults:
 - both boxed inputs and bottom-line-only inputs are allowed depending on use case
 - default to clear, low-noise, highly legible controls
 - use bottom-line-only fields only when the workflow stays simple and usability remains strong
+
+Header default:
+- use a standard GeoCompare-Web-style page header unless a product has a clear reason to deviate
+- keep the header calm, top-aligned, lightly descriptive, and structurally consistent across pages
 
 Shared metrics to preserve where practical:
 - type scale

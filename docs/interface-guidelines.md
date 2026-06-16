@@ -61,6 +61,37 @@ Avoid:
 - Do not require icons everywhere. Use them when they improve scanning, recognition, or action clarity.
 - In data-heavy or map-oriented products, icons should stay sparse and functional. In action-heavy products, they can play a larger supporting role.
 
+## Brand Typography / Wordmark Guidance
+
+For text-based app wordmarks, prefer a platform-stable modern sans stack rather than relying on Helvetica alone.
+
+Recommended default:
+- `font-family: "Inter", "Helvetica Neue", Arial, sans-serif;`
+
+If using Inter, load it explicitly when the app can depend on web fonts.
+
+Wordmark defaults:
+- `font-size: clamp(2.8rem, 7vw, 5.2rem);`
+- `font-weight: 700;`
+- `letter-spacing: -0.06em;`
+- `line-height: 0.92;`
+
+Rules:
+- avoid overly heavy or overly tight text marks, especially for short rounded names
+- treat `800` weight and `-0.08em` tracking as likely too heavy or too tight for the default shared baseline
+- do not assume Helvetica exists on Windows
+- if Helvetica-era sleekness matters, load Inter explicitly, use `"Helvetica Neue"` where available, or create a proper SVG or vector wordmark
+- for alpha and beta labels, prefer a separate small badge or carefully spaced superscript so the label does not distort the primary wordmark
+
+Favicon and browser-icon support:
+- provide `favicon.ico` in addition to PNG icons
+- keep a `512 x 512` PNG for app icons and Apple touch icons
+- include a Windows-friendly `.ico` for Chrome and Edge favicon consistency
+- recommended favicon links:
+  - `<link rel="icon" href="/favicon.ico" sizes="any">`
+  - `<link rel="icon" type="image/png" sizes="512x512" href="/assets/app-icon.png">`
+  - `<link rel="apple-touch-icon" href="/assets/app-icon.png">`
+
 ## Standard App Icon Baseline
 
 For simple monogram-based app icons, use this default production baseline unless a product clearly needs an exception.

@@ -68,12 +68,20 @@ Typography defaults:
 - use a small shared type scale with role-based consistency
 - do not force identical page-title placement across apps
 
+Wordmark defaults:
+- for text-based app wordmarks, prefer a stable sans stack such as `Inter`, `Helvetica Neue`, Arial, sans-serif
+- default wordmark baseline: `700` weight, `-0.06em` tracking, `0.92` line-height, and `clamp(2.8rem, 7vw, 5.2rem)` sizing
+- avoid assuming Helvetica exists on Windows
+- avoid overly heavy or overly tight defaults such as `800` weight and `-0.08em` tracking unless a mark clearly needs it
+- if Helvetica-era sleekness matters, load Inter explicitly or ship a proper SVG or vector wordmark
+
 Icon defaults:
 - prefer Lucide for interoperability and consistency
 - icons are optional and functional, not decorative
 - use more icons in action-heavy products
 - use fewer icons in data-heavy or map-heavy products
 - for Lucide-style glyph favicons and app icons, default to a `272 px` maximum glyph dimension and `40 px` production stroke on a `512 x 512` artboard unless a product clearly needs an exception
+- provide `favicon.ico` in addition to PNG icons, and keep a `512 x 512` PNG for app icons and Apple touch icons
 
 Form-control defaults:
 - both boxed inputs and bottom-line-only inputs are allowed depending on use case

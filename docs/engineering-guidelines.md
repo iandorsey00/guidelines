@@ -21,14 +21,13 @@ This repo should define the stable default. Project repos or local overlays may 
 
 ## Shared Shorthand
 
-- `DSR` = docs refresh if applicable, security pass, and release
-- `DR` = docs refresh required
-- `DR(r)` = docs refresh recommended
-- `SP` = security pass required
-- `SP(r)` = security pass recommended
-- `Release` implies version bump when appropriate, commit, push, and deploy instructions
+- `RC` = proportional release cycle: documentation, security review, relevant tests, versioning when appropriate, commit, and push
+- `FRC` = full release cycle using every available release gate
+- `CP` = review, commit, and push without an implied release
+- `RRC` = assess the changes, choose `RC` or `FRC`, briefly explain the choice, and perform it
+- `DSR` = legacy alias for `RRC`
 
-Use shorthand only when the meaning is already clear to the team or documented in the relevant repo. Prefer `DSR` when the intent is to run the full docs/security/release flow.
+Use shorthand only when the meaning is already clear to the team or documented in the relevant repo. Prefer `RRC` when the appropriate release depth is not obvious.
 
 ## What Belongs Here
 
@@ -63,16 +62,16 @@ Project-specific scripts may live in app repos when they are reusable inside tha
 - Prefer practical defaults over exhaustive policy.
 - Update shared docs when a convention should apply across multiple projects.
 - Keep implementation-neutral product guidance separate from implementation-specific scripts and ops.
-- Run `DR` when behavior, conventions, or workflows change enough to make docs stale.
+- Refresh documentation when behavior, conventions, or workflows change enough to make docs stale.
 
 ## Release Expectations
 
 - Treat release work as an explicit activity, not an implied side effect.
-- If asked to `Release`, include the full chain unless told otherwise:
-  1. version bump if appropriate
-  2. commit
-  3. push
-  4. deploy instructions or deployment action as defined by the project
+- If asked for `RC`, run a release cycle proportional to the scope and risk of the changes.
+- If asked for `FRC`, run every available release gate.
+- If asked for `CP`, review the intended diff, commit, and push without implying versioning, deployment, or comprehensive release testing.
+- If asked for `RRC` or legacy `DSR`, assess the current changes, choose `RC` or `FRC`, briefly explain the choice, and perform it.
+- Every release cycle should include diff hygiene, review for secrets and unintended files, relevant automated tests, documentation updates where behavior or usage changed, version consistency checks when a version changes, and intentional commit and push.
 - Deployment does not need to use the same mechanism across apps, but it should meet the same shared standard: documented, repeatable, secure, verifiable, and recoverable.
 - Record app-specific release mechanics in the app repo, not here.
 - Prefer predictable versioning and repeatable release steps.
@@ -81,7 +80,7 @@ Project-specific scripts may live in app repos when they are reusable inside tha
 
 Security should be built into normal engineering decisions from the start, including architecture, defaults, credential handling, deployment, and maintenance.
 
-- Run `SP` for meaningful changes, especially around auth, data handling, dependencies, configuration, and deployment.
+- Run a security review for meaningful changes, especially around auth, data handling, dependencies, configuration, and deployment.
 - Apps with logins should generally provide a `robots.txt` unless there is a clear reason not to.
 - Never commit secrets.
 - Never commit machine-specific filled environment files.

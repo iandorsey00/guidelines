@@ -63,12 +63,10 @@ Avoid:
 
 ## Brand Typography / Wordmark Guidance
 
-For text-based app wordmarks, prefer a platform-stable modern sans stack rather than relying on Helvetica alone.
+For Ian Dorsey app wordmarks, prefer a restrained Helvetica-era treatment.
 
 Recommended default:
-- `font-family: "Inter", "Helvetica Neue", Arial, sans-serif;`
-
-If using Inter, load it explicitly when the app can depend on web fonts.
+- `font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;`
 
 Wordmark defaults:
 - `font-size: clamp(2.8rem, 7vw, 5.2rem);`
@@ -79,9 +77,10 @@ Wordmark defaults:
 Rules:
 - avoid overly heavy or overly tight text marks, especially for short rounded names
 - treat `800` weight and `-0.08em` tracking as likely too heavy or too tight for the default shared baseline
-- do not assume Helvetica exists on Windows
-- if Helvetica-era sleekness matters, load Inter explicitly, use `"Helvetica Neue"` where available, or create a proper SVG or vector wordmark
-- for alpha and beta labels, prefer a separate small badge or carefully spaced superscript so the label does not distort the primary wordmark
+- ensure no broader heading reset overrides the wordmark letter spacing
+- avoid importing a separate webfont only for the wordmark unless the app already uses it systemwide
+- if cross-platform fidelity matters more than live text, create a proper SVG or vector wordmark
+- for alpha and beta labels, prefer a small superscript-like mark near the wordmark, using the same type family and weight, so the label does not distort the primary wordmark
 
 Favicon and browser-icon support:
 - provide `favicon.ico` in addition to PNG icons

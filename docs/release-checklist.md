@@ -2,56 +2,97 @@
 
 ## Purpose
 
-Use this checklist when work is being prepared for release.
+Use this checklist when work is being prepared for commit, push, or release.
 
-This document turns shared shorthand into a repeatable workflow.
+Release work should be proportional to the scope and risk of the change. Proportional does not mean skipping basic release safety.
 
 ## Shared Terms
 
-- `DSR` = docs refresh if applicable, security pass, and release
-- `DR` = docs refresh required
-- `DR(r)` = docs refresh recommended
-- `SP` = security pass required
-- `SP(r)` = security pass recommended
-- `Release` = version bump if appropriate, commit, push, and deploy or provide deploy instructions
+- `RC` = proportional release cycle
+- `FRC` = full release cycle using every available release gate
+- `CP` = review, commit, and push without an implied release
+- `RRC` = recommended release cycle: assess the changes, choose `RC` or `FRC`, briefly explain the choice, and perform it
+- `DSR` = legacy alias for `RRC`
 
-## Pre-Release
+## CP: Commit And Push
 
-- Confirm the work is in a coherent, reviewable state.
-- Confirm scope matches the intended release.
-- Run `DR` or `DR(r)` as appropriate.
-- Run `SP` or `SP(r)` as appropriate.
-- Verify any project-specific checks defined in the app repo.
+Use `CP` when the work only needs an intentional commit and push.
 
-## Release Action
+Include:
+- review the intended diff
+- check for secrets and unintended files
+- create an appropriate commit
+- push the branch
 
-When asked to `Release`, do the following unless the project defines a documented exception:
+`CP` does not imply:
+- version bump
+- documentation work
+- dependency audit
+- comprehensive release testing
+- deployment
 
-1. Bump version if appropriate.
-2. Commit with a clear, intentional message.
-3. Push the branch or release commit.
-4. Deploy or provide the exact deployment instructions defined by the project.
+## RC: Release Cycle
 
-## Documentation Refresh
+Use `RC` for normal releases where release work should scale with the risk and breadth of the changes.
 
-Run `DR` when:
-- behavior changed enough to make docs stale
-- shared conventions changed
-- setup, release, or operator instructions changed
-- UI or workflow changed in a way future contributors need to know
+Always include:
+- review the intended diff
+- refresh relevant documentation
+- run relevant automated tests
+- check for secrets and unintended files
+- run basic release metadata checks
+- bump the version when appropriate
+- commit and push
 
-Use `DR(r)` when a docs update would be helpful but is not strictly necessary for safe continuation.
+Broader changes should receive broader testing and security review.
 
-## Security Pass
+## FRC: Full Release Cycle
 
-Run `SP` when:
-- auth, permissions, or secrets handling changed
-- data handling changed
-- dependencies changed in a meaningful way
-- deployment or configuration changed
-- external integrations changed
+Use `FRC` for milestones, substantial features, architectural changes, security-sensitive work, or releases with broad user-facing impact.
 
-Use `SP(r)` when risk is lower but a quick security-minded review is still worthwhile.
+Include:
+- complete documentation review
+- security review and dependency audit
+- full automated test suite
+- browser or end-to-end tests where applicable
+- release metadata and cache-busting validation where applicable
+- version bump
+- post-bump consistency check
+- commit and push
+- deployment and rollback instructions when applicable
+
+## RRC: Recommended Release Cycle
+
+Use `RRC` when the appropriate release depth is not obvious.
+
+Process:
+- assess the scope, risk, and release impact of the current changes
+- choose `RC` or `FRC`
+- briefly state the choice
+- perform the selected release cycle
+
+Treat legacy `DSR` requests as `RRC`.
+
+## Baseline Rule
+
+Every release cycle should include:
+- `git diff --check` or equivalent
+- review for secrets and unintended files
+- relevant automated tests
+- documentation updates where behavior or usage changed
+- version consistency checks when a version is changed
+- intentional commit and push
+
+Proportional release work changes the breadth of review and testing. It does not remove basic release safety.
+
+## Versioning Guidance
+
+Classify changes using standard release concepts:
+- patch: fixes, copy changes, styling adjustments, and narrow behavioral changes
+- minor: meaningful new features or expanded functionality
+- major: incompatible behavior, major architecture changes, or significant product redefinition
+
+Pre-1.0 projects may map these classifications onto their existing alpha or beta version scheme conservatively.
 
 ## Notes
 

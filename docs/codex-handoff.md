@@ -69,11 +69,12 @@ Typography defaults:
 - do not force identical page-title placement across apps
 
 Wordmark defaults:
-- for text-based app wordmarks, prefer a stable sans stack such as `Inter`, `Helvetica Neue`, Arial, sans-serif
+- for Ian Dorsey app wordmarks, prefer a restrained Helvetica-era stack: `"Helvetica Neue"`, Helvetica, Arial, sans-serif
 - default wordmark baseline: `700` weight, `-0.06em` tracking, `0.92` line-height, and `clamp(2.8rem, 7vw, 5.2rem)` sizing
-- avoid assuming Helvetica exists on Windows
 - avoid overly heavy or overly tight defaults such as `800` weight and `-0.08em` tracking unless a mark clearly needs it
-- if Helvetica-era sleekness matters, load Inter explicitly or ship a proper SVG or vector wordmark
+- ensure broader heading resets do not override the wordmark letter spacing
+- avoid importing a separate webfont only for the wordmark unless the app already uses it systemwide
+- render alpha or beta labels as small superscript-like marks near the wordmark, using the same type family and weight
 
 Icon defaults:
 - prefer Lucide for interoperability and consistency
@@ -163,12 +164,11 @@ Shared standards:
 - practical and high-signal
 
 Shorthand:
-- `DSR` = docs refresh if applicable, security pass, and release
-- `DR` = docs refresh required
-- `DR(r)` = docs refresh recommended
-- `SP` = security pass required
-- `SP(r)` = security pass recommended
-- `Release` = version bump if appropriate, commit, push, deploy or provide deploy instructions
+- `RC` = proportional release cycle: documentation, security review, relevant tests, versioning when appropriate, commit, and push
+- `FRC` = full release cycle using every available release gate
+- `CP` = review, commit, and push without an implied release
+- `RRC` = assess the changes, choose `RC` or `FRC`, briefly explain the choice, and perform it
+- `DSR` = legacy alias for `RRC`
 
 Rules:
 - shared guidance belongs here

@@ -57,9 +57,12 @@ Visual defaults:
 - use neutral surfaces with restrained accent usage
 - default accent color is blue unless a product has a documented reason to deviate
 - accent swatches should be circles when they appear
+- define semantic color roles for backgrounds, surfaces, text, separators, accent interactions, focus, selection, and status states
+- allow apps to tune exact values while preserving intentional roles and contrast in both themes
 - favor progressive disclosure over exposing everything at once
 - reduce clutter before reducing space
 - remove dividers and borders that do not carry meaning
+- establish container hierarchy with spacing, alignment, and typography before surfaces, borders, or shadows
 
 Typography defaults:
 - Helvetica when legally and practically available
@@ -90,8 +93,41 @@ Form-control defaults:
 - use bottom-line-only fields only when the workflow stays simple and usability remains strong
 
 Header default:
-- use a standard GeoCompare-Web-style page header unless a product has a clear reason to deviate
+- use the standard GeoCompare-Web-style page header as a default pattern, not a mandatory identical composition
 - keep the header calm, top-aligned, lightly descriptive, and structurally consistent across pages
+- allow product-specific composition, such as MiniTickets, when it better supports the workflow while preserving shared hierarchy and rhythm
+
+State and interaction defaults:
+- design significant interfaces across default, focus, pressed, disabled, pending, empty, error, partial-failure, success, unavailable, offline, and permission-denied states where applicable
+- check unusually long English and Chinese content and both narrow and wide layouts
+- prevent duplicate submissions during pending actions
+- use brief, purposeful motion and respect `prefers-reduced-motion`
+- do not leave reachable states to accidental browser or framework behavior
+
+Cross-app review default:
+- compare related apps at shared mobile, laptop, and wide-desktop widths
+- include light and dark mode, representative interface states, and supported languages
+- review hierarchy, spacing, typography roles, controls, accent restraint, state behavior, and clutter without forcing identical layouts
+
+Portfolio screenshot default:
+- give each visual app a small, repeatable portfolio capture method proportional to its complexity
+- keep a screenshot manifest and instructions in `docs/portfolio/README.md`, curated PNGs in `docs/portfolio/screenshots/`, and an app-local capture script where practical
+- prefer one `portfolio:capture` or ecosystem-equivalent command from the app root and use `PORTFOLIO_URL` as the neutral URL override when needed
+- use one primary screenshot for a simple app; use three to six distinct scenes for an app with several important surfaces
+- treat portfolio screenshots as curated demonstrations, not visual-regression baselines
+- default automated desktop captures to a fixed `1440 x 1000` viewport, `2x` output, explicit light mode, locale, timezone, and reduced motion unless the product needs a documented variation
+- add mobile, dark-mode, or bilingual scenes only when they materially represent the product
+- use ordered descriptive filenames and meaningful alt text
+- derive a `1440 x 720` `social-preview.png` from the strongest representative scene when useful
+- review and refresh screenshots after substantial visual or workflow changes, not automatically for every routine release
+
+Demo-mode screenshot default:
+- authenticated or data-backed apps should use deterministic synthetic fixtures or a controlled demo mode for populated screenshots
+- keep demo data isolated from production data and credentials
+- disable email, notifications, payments, webhooks, and other external side effects
+- never weaken production authentication or authorization for screenshot capture
+- require explicit safe activation, fail closed when safety assumptions are unmet, and document one reset or seed path
+- never publish personal information, secrets, private hostnames, access tokens, or machine-specific details
 
 Shared metrics to preserve where practical:
 - type scale
@@ -246,3 +282,4 @@ For fuller detail, use:
 - `docs/engineering-guidelines.md`
 - `docs/release-checklist.md`
 - `docs/cli-guidelines.md`
+- `docs/portfolio-screenshot-guidelines.md`

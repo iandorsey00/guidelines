@@ -170,6 +170,21 @@ Recommended output:
 - Where appropriate, inherit the MiniTickets accent approach: present, recognizable, restrained.
 - When accent color swatches appear, render them as circles by default.
 
+## Semantic Color Roles
+
+Define color by purpose before choosing exact values. Each app may tune its palette, but should provide intentional light- and dark-mode values for:
+
+- page background
+- primary and raised surfaces
+- primary, secondary, and disabled text
+- subtle and strong separators
+- accent and accent interaction states
+- focus
+- selection
+- success, warning, and destructive states
+
+Use semantic tokens or an equivalent shared naming model so components do not depend on arbitrary gray or accent values. Verify every role for contrast and distinguishability in both themes. Shared roles should create predictable behavior without requiring identical hex values across products.
+
 ## Spacing And Density
 
 - Favor generous spacing over dense packing.
@@ -188,9 +203,22 @@ Recommended output:
 - Prefer obvious page structure over clever layout moves.
 - Standardize alignment logic and spacing rhythm before standardizing exact header position or page chrome.
 
+## Container Hierarchy
+
+Separate and group content using the quietest effective method, in this order:
+
+1. spacing
+2. alignment
+3. typography
+4. surface or background contrast
+5. borders or dividers when the first four are insufficient
+6. shadows only when elevation or overlap must be communicated
+
+Do not place every section in a card by default. Containers should clarify structure or interaction, not compensate for weak hierarchy. Remove borders, dividers, backgrounds, and shadows that do not carry meaning.
+
 ## Standard Page Header
 
-Use a standard GeoCompare-Web-style header by default unless a product has a clear reason to deviate.
+Use the standard GeoCompare-Web-style header as the default pattern unless a product has a clear reason to deviate. Standardize its hierarchy and rhythm, not an identical branded composition.
 
 Characteristics:
 - page title aligned at the top of the content area
@@ -200,6 +228,8 @@ Characteristics:
 - no decorative chrome unless it improves comprehension
 
 The header should feel steady, quiet, and structural rather than branded or ornamental.
+
+Products with a different information architecture, such as MiniTickets, may use a different header composition when it better supports the primary workflow. Preserve the shared type roles, spacing rhythm, and status-message placement where practical.
 
 ## Forms And Controls
 
@@ -239,6 +269,45 @@ For shared-account products:
 - Let spacing and density adjust with screen size, but keep the interface calm and readable.
 - Treat map-heavy, data-heavy, and form-heavy screens as separate responsive cases rather than forcing one pattern everywhere.
 - Make responsive states feel intentionally designed, not like accidental leftovers from the desktop layout.
+
+## State-Complete Design
+
+Design the complete interaction, not only the ideal populated screen. For each significant page, flow, and reusable control, consider:
+
+- default
+- hover, focus, pressed, selected, and disabled where applicable
+- loading, saving, and other pending states
+- empty and first-use states
+- validation and error states
+- partial failure
+- success
+- unavailable, offline, or permission-denied states where relevant
+- unusually long English and Chinese content
+- narrow mobile and wide desktop layouts
+
+States that cannot occur do not need artificial designs. States that can occur should not be left to accidental browser or framework behavior.
+
+## Interaction And Motion
+
+- Give interactive controls clear hover, focus, pressed, disabled, and pending behavior where applicable.
+- Prevent duplicate submissions while an action is pending.
+- Keep status changes understandable to keyboard and assistive-technology users.
+- Use motion to explain appearance, disappearance, hierarchy, or spatial change.
+- Keep transitions brief, subtle, and consistent.
+- Respect `prefers-reduced-motion` and provide a calm reduced-motion experience.
+- Avoid motion added only to make an interface feel lively.
+
+## Cross-App Visual Review
+
+Review related apps against a small shared screenshot set instead of requiring identical compositions. Include, where applicable:
+
+- narrow mobile, typical laptop, and wide desktop widths
+- light and dark mode
+- empty and populated states
+- pending, error, and success states
+- English and Chinese content
+
+Compare hierarchy, spacing, typography roles, control treatment, accent restraint, state behavior, and visual clutter. Use the review to find drift and weak patterns, not to erase product-specific layout decisions.
 
 ## Accessibility Expectations
 

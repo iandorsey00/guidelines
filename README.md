@@ -24,6 +24,7 @@ The first intended consumers are MiniTickets, MiniAuth, and GeoCompare Web, but 
 - `docs/accessibility-checklist.md`: shared accessibility review checklist
 - `docs/release-checklist.md`: shared release shorthand and execution checklist
 - `docs/cli-guidelines.md`: shared standards for CLI consistency, accessibility, and best practices
+- `docs/portfolio-screenshot-guidelines.md`: repeatable, privacy-safe portfolio screenshot and demo-mode guidance
 - `docs/codex-handoff.md`: fast ChatGPT Codex handoff for loading shared repo guidance into thread context
 
 ## How To Use

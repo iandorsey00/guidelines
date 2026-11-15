@@ -58,6 +58,8 @@ Project-specific scripts may live in app repos when they are reusable inside tha
 
 ## Documentation Conventions
 
+For durable file formats and cross-tool workflows, use the [standards-first guide](standards-first.md) to define and check the portable contract.
+
 - Keep shared docs concise, opinionated, and scannable.
 - Prefer practical defaults over exhaustive policy.
 - Update shared docs when a convention should apply across multiple projects.
@@ -360,6 +362,7 @@ Keep private details out of this repo, including:
 - When a rule is app-specific, document it in the app repo instead of mutating shared guidance prematurely.
 - Do not bind shared guidance too tightly to one AI tool's quirks, prompt style, or execution model.
 - Keep output high-signal, practical, and easy to apply.
+- Provide a copy-ready code block for routine, low-risk commands the user can run directly when that saves a chat turn or credits. State where to run it, what it does, and what to expect. Carry out the work when the user asks for execution.
 - Default toward cleaner, calmer, more consistent, and more reusable solutions when ambiguity exists.
 - Flag exceptions clearly when deviating from shared guidance.
 

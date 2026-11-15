@@ -20,6 +20,7 @@ The first intended consumers are MiniTickets, MiniAuth, and GeoCompare Web, but 
 
 - `docs/interface-guidelines.md`: shared interface and product design guidance
 - `docs/engineering-guidelines.md`: shared engineering, release, security, and collaboration guidance
+- `docs/standards-first.md`: portable formats, compatibility, and how to verify them
 - `docs/content-style-guide.md`: shared product copy and bilingual wording guidance
 - `docs/accessibility-checklist.md`: shared accessibility review checklist
 - `docs/release-checklist.md`: shared release shorthand and execution checklist

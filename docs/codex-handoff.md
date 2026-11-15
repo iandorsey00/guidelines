@@ -192,6 +192,8 @@ Rules:
 
 ## Engineering Summary
 
+For files or workflows that need to travel across tools, start with [standards-first development](standards-first.md). Prefer an established format, publish a worked example, and test the promised behavior. Use shared fixtures and an independent implementation when promising equivalent results across implementations.
+
 Shared standards:
 - implementation-neutral by default
 - AI-implementation-neutral by default
@@ -210,6 +212,7 @@ Rules:
 - shared guidance belongs here
 - stack-specific, project-specific, person-specific, or AI-workflow-specific details belong in the app repo or a local overlay
 - standards should be used wherever practical
+- offer copy-ready blocks for routine, low-risk commands when direct use saves a turn or credits. Include where to run the command and what to expect. Execute it when asked
 - overlays should be additive, not replacements for the shared baseline without reason
 - never commit secrets or machine-specific filled env files
 - prefer secure credential handling that avoids unnecessary repeated password entry when approved tools like keychains, credential managers, passkeys, or short-lived sessions are available

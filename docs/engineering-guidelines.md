@@ -362,6 +362,7 @@ Keep private details out of this repo, including:
 - When a rule is app-specific, document it in the app repo instead of mutating shared guidance prematurely.
 - Do not bind shared guidance too tightly to one AI tool's quirks, prompt style, or execution model.
 - Keep output high-signal, practical, and easy to apply.
+- Add concise comments throughout the codebase as you write or revise it. Explain the intent of non-obvious blocks, the reasons behind important decisions, and any assumptions, invariants, workarounds, or edge cases a maintainer needs to know. Add context to nearby code when a reader would otherwise have to reconstruct the reasoning, and update comments when behavior changes.
 - Provide a copy-ready code block for routine, low-risk commands the user can run directly when that saves a chat turn or credits. State where to run it, what it does, and what to expect. Carry out the work when the user asks for execution.
 - Default toward cleaner, calmer, more consistent, and more reusable solutions when ambiguity exists.
 - Flag exceptions clearly when deviating from shared guidance.

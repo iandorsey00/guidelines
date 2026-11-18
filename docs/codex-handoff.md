@@ -212,7 +212,8 @@ Rules:
 - shared guidance belongs here
 - stack-specific, project-specific, person-specific, or AI-workflow-specific details belong in the app repo or a local overlay
 - standards should be used wherever practical
-- add concise comments throughout new and touched code to explain intent, decisions, assumptions, and surprising behavior. Fill gaps in nearby code and keep existing comments accurate as behavior changes
+- write human-readable, self-documenting code with descriptive names, straightforward control flow, and clear structure
+- comment frequently in new and edited code to explain intent, decisions, assumptions, and surprising behavior. Fill gaps in nearby code and keep comments accurate as behavior changes
 - offer copy-ready blocks for routine, low-risk commands when direct use saves a turn or credits. Include where to run the command and what to expect. Execute it when asked
 - overlays should be additive, not replacements for the shared baseline without reason
 - never commit secrets or machine-specific filled env files

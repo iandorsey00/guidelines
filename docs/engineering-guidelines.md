@@ -19,6 +19,15 @@ This repo should define the stable default. Project repos or local overlays may 
 - Write docs so both humans and Codex can apply them quickly.
 - Standards are good and should be used wherever practical.
 
+## Problem Framing and Existing Solutions
+
+Before starting a new project, take a short discovery pass. Scale the effort to the cost and commitment of the project.
+
+1. State who has the problem, what they are trying to accomplish, and what makes the current workflow difficult. Reframe the problem by asking what would achieve the desired outcome if the proposed app or feature were optional.
+2. Check what already exists. Look at relevant apps, open-source projects, and ways to improve the current workflow. Consider adopting one tool, extending it, or combining tools. Try the closest options on a representative task when practical.
+3. Compare the options against the essential workflow, constraints, and preferences. When several tools cover parts of the idea, identify the specific gap, such as repeated handoffs, lost data, or a missing capability. Weigh the effort of combining tools against the cost of building and maintaining a new one.
+4. Record the outcome, the closest alternatives, and the reason for the chosen approach. If a new build makes sense, start with the smallest version that tests whether closing the gap improves the workflow.
+
 ## Shared Shorthand
 
 - `RC` = proportional release cycle: documentation, security review, relevant tests, versioning when appropriate, commit, and push

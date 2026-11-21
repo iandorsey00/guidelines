@@ -273,10 +273,11 @@ For related apps with a shared account system:
 
 At the start of a project or thread:
 1. Read this file first.
-2. Use it to set default design, writing, engineering, and release assumptions.
-3. Open the full docs only for the sections needed by the task.
-4. Keep decisions aligned with shared standards unless the app requires an explicit exception.
-5. If creating an exception, document it in the app repo rather than mutating shared guidance too early.
+2. For a new project, reframe the problem around the desired outcome and check existing apps, workflows, and tool combinations. Identify what the closest options leave unresolved and start with the smallest build that tests whether closing that gap helps. See [Problem Framing and Existing Solutions](engineering-guidelines.md#problem-framing-and-existing-solutions).
+3. Use this handoff to set default design, writing, engineering, and release assumptions.
+4. Open the full docs only for the sections needed by the task.
+5. Keep decisions aligned with shared standards unless the app requires an explicit exception.
+6. If creating an exception, document it in the app repo rather than mutating shared guidance too early.
 
 ## Source Documents
 

@@ -31,8 +31,8 @@ The first intended consumers are MiniTickets, MiniAuth, and GeoCompare Web, but 
 ## How To Use
 
 For a new project:
-1. Start here before making interface or process decisions.
-2. Apply shared rules by default.
+1. Reframe the problem and check existing solutions before committing to a build. See [Problem Framing and Existing Solutions](docs/engineering-guidelines.md#problem-framing-and-existing-solutions).
+2. Apply the shared interface and engineering guidelines by default.
 3. Add project-specific exceptions in the app repo, not here.
 4. Keep this repo concise, opinionated, and durable.
 

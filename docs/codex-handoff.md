@@ -37,6 +37,7 @@ When in doubt, prefer:
 
 Design philosophy:
 - useful first
+- make usability a high priority in every design, including tradeoffs about appearance, density, and customization
 - modern, contemporary, minimal
 - only what is needed and nothing that is not
 - restrained, calm, deliberate

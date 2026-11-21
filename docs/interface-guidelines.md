@@ -9,6 +9,7 @@ The target outcome is a calm, modern interface language that feels clear, capabl
 ## Design Principles
 
 - Design for usefulness first. The interface should help people complete tasks with low friction.
+- Make usability a high priority in every design. Help people find what they need and understand their options. Protect usability when making tradeoffs about appearance, density, or customization.
 - Use only what is needed. Remove decoration, noise, and optional complexity unless it clearly improves comprehension.
 - Prefer clarity over customization. Minimal customization is good when it does not reduce usability.
 - Make hierarchy obvious. Users should be able to tell what matters at a glance.
